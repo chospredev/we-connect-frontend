@@ -1,0 +1,14 @@
+.delete-movie {
+  color: #fff;
+  background-color: #dd2020;
+}
+
+.select-movie {
+  color: #fff;
+  background-color: rgb(55, 0, 128);
+  margin-left: 10px;
+}
+
+.routerButton {
+  background-color: seagreen;
+}

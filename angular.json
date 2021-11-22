@@ -1,6 +1,29 @@
 {
   "version": 1,
   "projects": {
+    "ui": {
+      "projectType": "library",
+      "root": "libs/ui",
+      "sourceRoot": "libs/ui/src",
+      "prefix": "client",
+      "architect": {
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/ui"],
+          "options": {
+            "jestConfig": "libs/ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["libs/ui/src/**/*.ts", "libs/ui/src/**/*.html"]
+          }
+        }
+      },
+      "tags": []
+    },
     "weconnect": {
       "projectType": "application",
       "root": "apps/weconnect",
@@ -20,7 +43,10 @@
               "apps/weconnect/src/favicon.ico",
               "apps/weconnect/src/assets"
             ],
-            "styles": ["apps/weconnect/src/styles.css"],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css",
+              "apps/weconnect/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
